@@ -8,6 +8,7 @@ public class DasBootInfo : MonoBehaviour {
 	public int playerLives;
 	public int bootSize;
 	public float refreshRate; 
+	public int Score;
 
 	// Use this for initialization
 	void Start () 
