@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DasBootStomp : MonoBehaviour {
 
-	private Vector3 StompSpeed = new Vector3(0, -3,0);
+	private Vector3 StompSpeed = new Vector3(0, -2,0);
 
 	private Vector3 StompRecover = new Vector3(0, 0 ,0);
 
@@ -38,11 +38,18 @@ public class DasBootStomp : MonoBehaviour {
 		if (NotStomping == false)
 		{
 			gameObject.transform.Translate(StompSpeed);
+			PositionReset = false;
 		}
 
-		if (NotStomping == true && gameObject.transform.position.y <= StartingPosition.y)
+		if (NotStomping == true && gameObject.transform.position.y < StartingPosition.y)
 		{
-			gameObject.transform.Translate(StompRecover);
+			gameObject.transform.Translate (StompRecover);
+		} 
+
+		if (gameObject.transform.position.y >= StartingPosition.y)
+		{
+			print ("Reset Position");
+			PositionReset = true;
 		}
 
 	}
