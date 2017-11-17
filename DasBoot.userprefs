@@ -1,0 +1,16 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\StatueCollider.cs">
+    <Files>
+      <File FileName="Assets\Scripts\ScoreManager.cs" Line="19" Column="1" />
+      <File FileName="Assets\Scripts\EnemyInfo.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\StatueCollider.cs" Line="20" Column="4" />
+      <File FileName="Assets\Scripts\DasBootInfo.cs" Line="6" Column="2" />
+      <File FileName="Assets\Scripts\Killzone.cs" Line="12" Column="4" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
