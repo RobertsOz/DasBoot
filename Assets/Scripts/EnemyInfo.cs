@@ -7,7 +7,7 @@ public class EnemyInfo : MonoBehaviour {
 	public int Health;
 	public int EnemyScore;
 
-	private GameObject DASBOOT;
+	private GameObject ScoreManager;
 
 	void OnTriggerEnter2D(Collider2D Boot)
 	{
@@ -18,12 +18,10 @@ public class EnemyInfo : MonoBehaviour {
 
 		if (Health <= 0)
 		{
-			DASBOOT = GameObject.Find("Das Boot");
-			DASBOOT.GetComponent<DasBootInfo> ().Score += EnemyScore;
-			print (DASBOOT.GetComponent<DasBootInfo> ().Score);
+			ScoreManager = GameObject.Find("ScoreManager");
+			ScoreManager.GetComponent<ScoreManager> ().score += EnemyScore;
+			print (ScoreManager.GetComponent<ScoreManager> ().score);
 			Destroy (gameObject);
 		}
 	}
-
-
 }
