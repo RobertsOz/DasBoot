@@ -16,20 +16,37 @@ public class PeasentSpawner : MonoBehaviour {
     
 	void Start ()
     {
+        StartCoroutine(Example());
         SpawnerPosition = new Vector3(this.transform.position.x, this.transform.position.y, 0);
-        InvokeRepeating("Spawn", SpawnDelay, SpawnRateTime);
-		SpawnDelay -= Time.deltaTime;
-		SpawnDelay = Mathf.Clamp (SpawnDelay, 0.1f, 2f);
+        //InvokeRepeating("Spawn", SpawnDelay, SpawnRateTime);
+		//SpawnDelay -= Time.deltaTime;
+		//SpawnDelay = Mathf.Clamp (SpawnDelay, 0.1f, 2f);
 
     }
 
-    void Spawn()
+    public void Spawn(GameObject PeasentType)
     {
-		Instantiate(LowLevelPeasent, SpawnerPosition, Quaternion.identity);
+		Instantiate(PeasentType, SpawnerPosition, Quaternion.identity);
     }
 
     void Update ()
     {
 
+    }
+
+    IEnumerator Example()
+    {
+        print(Time.time);
+        yield return new WaitForSeconds(SpawnRateTime);
+        Spawn(LowLevelPeasent);
+        if(Time.time >= 45)
+        {
+            Spawn(MidLevelPeasent);
+        }
+        if (Time.time >= 90)
+        {
+            Spawn(HighLevelPeasent);
+        }
+        StartCoroutine(Example());
     }
 }
